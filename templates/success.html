@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="main">
+    {% if par == 0 %}
+        <h2>Добро пожаловать, {{name}}</h2>
+    {% endif %}
+    {% if par == 1 %}
+        <h2>Неверный формат почты</h2>
+    {% endif %}
+    {% if par == 2 %}
+        <h2>Такой email уже есть</h2>
+    {% endif %}
+    {% if par == 3 %}
+        <h2>Неверный пароль</h2>
+    {% endif %}
+    {% if par == 4 %}
+        <h2>Такое имя уже существует</h2>
+    {% endif %}
+    {% if par == 5 %}
+        <h2>Недопустимый пароль, длина должна быть больше 8</h2>
+    {% endif %}
+    {% if par == 6 %}
+        <h2>Ненадежный пароль, должны быть большие буквы, маленькие буквы, цифры</h2>
+    {% endif %}
+    {% if par == 7 %}
+        <h2>Слабый пароль, должны быть большие буквы, маленькие буквы, цифры</h2>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block menu %}
+<ul>
+    <li><a href="all_news.html"><span>Новости</span></a></li>
+    <li><a href="index.html"><span>Биография</span></a></li>
+    <li><a href="creations.html"><span>Произведения</span></a></li>
+    <li><a href="bestiary.html"><span>Бестиарий</span></a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Добавление новости</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title }}<br>
+            {% for error in form.title.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}f
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.content.label }}<br>
+            {{ form.content }}<br>
+            {% for error in form.content.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+{% block menu %}
+<ul>
+    <li><a href="all_news.html"><span>Новости</span></a></li>
+    <li><a href="index.html"><span>Биография</span></a></li>
+    <li><a href="creations.html"><span>Произведения</span></a></li>
+    <li><a href="bestiary.html"><span>Бестиарий</span></a></li>
+</ul>
+{% endblock %}
