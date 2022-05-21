@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>template: home</title>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+    <meta name="author" content="Lena Bobyleva"/>
+    <link rel="stylesheet" type="text/css" href="{{ style }}"/>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="title1">
+            <h1><a href="index.html">Фан-клуб<br>Говарда Лавкрафта</a></h1>
+        </div>
+        <p id="toplinks">
+            {% if signed == 0 %}
+                <a href="input.html">Войти</a>
+                <a href="registration.html">Регистрация</a>
+            {% else %}
+                <a href="personal.html"> {{ name}} </a>
+                <a href="out.html">Выйти</a>
+            {% endif %}</p>
+    </div>
+    <div id="menu">
+        {% block menu %}{% endblock %}
+    </div>
+    <div id="content1">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="clear">
+
+    </div>
+    <div id="footer">
+        <p> 2022 | Python 3.8 </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Привет, {{ username }}!</h1>
+    <h2>Ваши новости</h2>
+    {% for item in news %}
+        <div class="alert alert-dark" role="alert" style="
+                color: #1b1e21;
+                background-color: #d6d8d9;
+                border-color: #c6c8ca;
+                position: relative;
+                padding: .75rem 1.25rem;
+                margin-bottom: 1rem;
+                border: 1px solid transparent;
+                box-sizing: border-box;
+                border-radius: .25rem;">
+            <h2>{{ item[1] }}</h2>
+            <div>{{ item[2] }}</div>
+            <a href="/delete_news/{{ item[0] }}">Удалить новость</a>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block menu %}
+    <ul>
+        <li><a href="all_news.html"><span>Новости</span></a></li>
+        <li><a href="index.html"><span>Биография</span></a></li>
+        <li><a href="creations.html"><span>Произведения</span></a></li>
+        <li><a href="bestiary.html"><span>Бестиарий</span></a></li>
+    </ul>
+{% endblock %}
